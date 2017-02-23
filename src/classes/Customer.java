@@ -1,10 +1,10 @@
-package application;
+package classes;
 
 
 public class Customer {
 	
 		
-		String fn ;
+		public String fn ;
 		String Ln ;
 		String pin;
 		String br;
