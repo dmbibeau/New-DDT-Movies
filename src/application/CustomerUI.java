@@ -1,14 +1,45 @@
 package application;
 
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.fxml.FXMLLoader;
+import java.awt.Label;
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.event.ActionEvent;
+public class CustomerUI extends Application {
 
-public class CustomerUI {
-
-	CustomerUI register = new CustomerUI();
+	
+	
+	
+	
+	
+		@FXML
+		public void startCustomerUI(ActionEvent event) {
+			try {
+			
+				Parent root= FXMLLoader.load(getClass().getResource("CustomersInfo.fxml"));
+				Scene scene = new Scene(root, 400,400);
+				//scene.getStylesheets().add(getClass().getResource("CustomersInfo.fxml").toExternalForm());
+				Stage stage = new Stage();
+				stage.setScene(scene);
+				stage.show();
+				
+				
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		public static void main(String[] args) {
+			launch(args);
+		}
+	
+	
+	
+	classes.Customer register = new classes.Customer();
 	@FXML
 	private TextField fName;
 	@FXML
@@ -29,7 +60,7 @@ public class CustomerUI {
 	private Label txtpinn;
 
 	public void storeINfo(ActionEvent event) {
-		Customer temp = new Customer(fName.getText(), lName.getText(), pinn.getText(), birth.getText(),
+		classes.Customer temp = new classes.Customer(fName.getText(), lName.getText(), pinn.getText(), birth.getText(),
 				address.getText(), phone.getText(), credit.getText(), email.getText());
 
 		System.out.println(temp.fn);
@@ -62,6 +93,11 @@ public class CustomerUI {
 		}
 		}
 		}
-	}
 
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+	}
 

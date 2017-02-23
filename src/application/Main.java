@@ -1,6 +1,9 @@
 package application;
 
 import javafx.fxml.FXMLLoader;
+
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
@@ -12,10 +15,10 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root= FXMLLoader.load(getClass().getResource("MainScrene.fxml"));
+			Parent root= FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
 			FXMLLoader loader = new FXMLLoader();
 			Scene scene = new Scene(root, 400,400);
-			scene.getStylesheets().add(getClass().getResource("MainScrene.fxml").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("MainScreen.fxml").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
@@ -23,6 +26,14 @@ public class Main extends Application {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	//Dave Added this 2/23/2017
+	public static void showCustomerInfo() throws IOException{
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("submenuUIs/CustomersInfo.fxml"));
+		BorderPane customesInfo = loader.load();
+//		mainLayout.setCenter(customersInfo);
 	}
 	
 	public static void main(String[] args) {

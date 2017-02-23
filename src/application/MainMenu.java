@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 public class MainMenu extends Application { 
 
-private AnchorPane MainScrene;
+private AnchorPane MainScreen;
       private Stage primaryStage;
 
 @Override
@@ -30,10 +30,10 @@ private AnchorPane MainScrene;
 		
 		try{
 			primaryStage.setTitle("Main Menu"); 
-			FXMLLoader loader= new FXMLLoader(MainMenu.class.getResource("view/MainScrene.fxml"));
-			MainScrene = (AnchorPane) loader.load();
+			FXMLLoader loader= new FXMLLoader(MainMenu.class.getResource("MainScreen.fxml"));
+			MainScreen = (AnchorPane) loader.load();
 			System.out.println("here");
-			Scene scene= new Scene(MainScrene);
+			Scene scene= new Scene(MainScreen);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
